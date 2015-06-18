@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery mtree.js demos</title>
+<link rel='stylesheet prefetch' href='foundation.css'>
+<link href="mtree.css" rel="stylesheet" type="text/css">
+<style>
+.mtree-demo .mtree {
+  background: #EEE;
+  margin: 20px auto;
+  max-width: 320px;
+  border-radius: 3px;
+}
+
+.mtree-skin-selector {
+  text-align: center;
+  background: #EEE;
+  padding: 10px 0 15px;
+}
+
+.mtree-skin-selector li {
+  display: inline-block;
+  float: none;
+}
+
+.mtree-skin-selector button {
+  padding: 5px 10px;
+  margin-bottom: 1px;
+  background: #BBB;
+}
+
+.mtree-skin-selector button:hover { background: #999; }
+
+.mtree-skin-selector button.active {
+  background: #999;
+  font-weight: bold;
+}
+
+.mtree-skin-selector button.csl.active { background: #FFC000; }
+</style>
+</head>
+
+<body>
+
+<div style="float:left; width:300px;">
+  <ul class="mtree jet">
+    <li><a href="#">Outcome 1 Stabilization of food consumption<hr></a>
+      <ul>
+        <li><a href="#">Food Assistance provided (by all modalities and beneficiary groups)</a>
+          <ul>
+            <li><a href="#">By Modality</a>
+             <ul>
+                <li><a href="#">E-Card/Vouchers</a></li>
+                 <li><a href="#">One-Off Food Parcel</a></li>
+                 <li><a href="#">Cash Assistance (ATM card)</a></li>
+              </ul>
+            </li>
+            <li><a href="#">By Beneficiary Group</a>
+              <ul>
+                <li><a href="#">Palestinian Refugees from Lebanon (PRS)</a></li>
+                 <li><a href="#">Syrian Refugees</a></li>
+                 <li><a href="#">Vulnerable Lebanese</a></li>
+                 <li><a href="#">Palestinian Refugees from Lebanon (PRL)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</li>
+    
+    <li><a href="#">Outcome 2
+Promote food availability and
+sustainable production<hr></a></li>
+    <li><a href="#">Outcome 3
+Promote utilization of diversified and
+quality food<hr></a> </li>
+    <li><a href="#">Outcome 4
+Enhance effective and coordinated food
+ security response</a></li>
+    
+</ul>
+</div>
+<script src="jQuery.js"></script> 
+<script src='jquery.velocity.min.js'></script> 
+<script src="mtree.js"></script> 
+<script>
+$(document).ready(function() {
+	
+  var mtree = $('ul.mtree');
+  
+  // Skin selector for demo
+  mtree.wrap('<div class=mtree-demo></div>');
+  var skins = ['bubba','skinny','transit','jet','nix'];
+  mtree.addClass(skins[3]);
+  /*$('body').prepend('<div class="mtree-skin-selector"><ul class="button-group radius"></ul></div>');
+  var s = $('.mtree-skin-selector');
+  $.each(skins, function(index, val) {
+    s.find('ul').append('<li><button class="small skin">' + val + '</button></li>');
+  });
+  s.find('ul').append('<li><button class="small csl active">Close Same Level</button></li>');
+  s.find('button.skin').each(function(index){
+    $(this).on('click.mtree-skin-selector', function(){
+      s.find('button.skin.active').removeClass('active');
+      $(this).addClass('active');
+      mtree.removeClass(skins.join(' ')).addClass(skins[index]);
+    });
+  })
+  s.find('button:first').addClass('active');
+  s.find('.csl').on('click.mtree-close-same-level', function(){
+    $(this).toggleClass('active'); 
+  });*/
+});
+</script>
+
+
+</body>
+</html>
